@@ -4,6 +4,7 @@
     package="com.gruia.courseplanet">
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +15,7 @@
         android:theme="@style/Theme.CoursePlanet"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.LandingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +23,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AnatomyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.GeometryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CoursesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ProgressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MainPageActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

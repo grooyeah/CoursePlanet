@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AccountActivity"
+    android:background="@drawable/gradient_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtDashboard"
+                android:text="My Profile"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_below="@id/txtDashboard"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/man" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#380036"
+                android:text="Change" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Edit name:" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"
+                />
+
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Edit email:" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"
+                />
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit phone:" />
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Phone"
+                android:inputType="phone"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/white"
+                />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/button2"
+                android:backgroundTint="#380036"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Save Changes"
+                android:onClick="editProfile"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
