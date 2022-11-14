@@ -1,33 +1,32 @@
-package com.gruia.courseplanet.fragments.anatomy.learn_fragments;
+package com.gruia.courseplanet.fragments.profile;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.fragment.app.Fragment;
 
 import com.gruia.courseplanet.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HeartFragment#newInstance} factory method to
+ * Use the {@link EditAccountFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HeartFragment extends Fragment {
+public class EditAccountFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public HeartFragment() {
+    public EditAccountFragment() {
         // Required empty public constructor
     }
 
@@ -37,11 +36,11 @@ public class HeartFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment HeartFragment.
+     * @return A new instance of fragment EditAccountFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HeartFragment newInstance(String param1, String param2) {
-        HeartFragment fragment = new HeartFragment();
+    public static EditAccountFragment newInstance(String param1, String param2) {
+        EditAccountFragment fragment = new EditAccountFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -56,15 +55,12 @@ public class HeartFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-        return inflater.inflate(R.layout.fragment_heart, container, false);
+        return inflater.inflate(R.layout.fragment_edit_account, container, false);
     }
 }

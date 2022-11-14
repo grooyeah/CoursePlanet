@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    Heart      -->
+    <string name="heart_definition">The heart is a muscle with one of the most important jobs in the body. It pumps blood to our organs, making sure our cells get the nutrients and oxygen they need.</string>
+    <string name="heart_how_it_works1">There are four different ares of the heart, called chambers. The atrium is at the top-left and oxygen-rich blood enters from the lungs. The blood flows from the atrium to the left ventricle, and is then pumped from the heart to the rest of the body.</string>
+    <string name="heart_how_it_works2">The right atrium receives blood that has been around the body ready for more oxygen. The right ventricle pumps blood to the lungs via the pulmonary artery where it is cleaned of carbon dioxide and refilled again with oxygen. Four valves between the atriums and ventricles make sure blood always flow in the right direction</string>
+    <string name="heart_how_it_works3">The heart responds to the body\'s need for oxygen by adjusting the speed it beats at, and the amount of blood it pumps with each beat. During exercise, the heart can increase the amount of blood it pumps up to five times. The normal resting heart rate for a human is 60 to 70 beats every second. </string>
+    <string name="heart_fact1">It takes 16 seconds for your blood to be pumped from the heart all the way down to your toes and back again.</string>
+    <string name="heart_fact2">If it continued to have a supply of oxygen, the heart would keep beating outside of the body.</string>
+
+    <!--    Lungs      -->
+    <string name="lungs_definition">The lungs take oxygen from the air and remove carbon dioxide from the body.</string>
+    <string name="lungs_how_it_works1">The air enters through the mouth or nose. It travels down the trachea, spits off between the two bronchi, which then branch off further into 30,000 bronchioles. The bronchioles end in alveoli, which are tiny air sacs. There is 300 million of them in the lungs! The alveoli are surrounded by blood vessels called capillaries, filled with red blood cells.</string>
+    <string name="lungs_how_it_works2">Red blood cells are doughnut shaped, and carry the oxygen and carbon dioxide in them all around the body. As the blood flows pas the alveoli, carbon dioxide floats out the red blood cell into the lungs, where it gets breathed back out. The empty red blood cells are then refilled with oxygen and go back around the body.</string>
+    <string name="lungs_breathe_in">The diaphragm and rib muscles contract to increase space and lower the air pressure in the lungs, so air flows in.</string>
+    <string name="lungs_breathe_out">When the rib and diaphragm muscles relax, the space in the lungs decreases. This increases the air pressure to push the air out of the lungs.</string>
+    <string name="lungs_fact1">Out of all organs in the human body, the lungs are the only ones that can float on water.</string>
+    <string name="lungs_fact2">The longest someone has managed to hold their breath was just over 20 minutes.</string>
+</resources>

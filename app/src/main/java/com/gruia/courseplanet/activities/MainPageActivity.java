@@ -44,20 +44,6 @@ public class MainPageActivity extends AppCompatActivity {
             public void onChanged(FirebaseUser firebaseUser) {
                 if(firebaseUser != null)
                 {
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
-                    System.out.println(firebaseUser.getEmail());
                     txtDashboard.setText(firebaseUser.getEmail());
                 }
             }
