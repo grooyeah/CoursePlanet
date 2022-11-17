@@ -28,14 +28,6 @@
                 android:textSize="10sp" />
 
 
-
-            <Button
-                android:id="@+id/logoutButton"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:text="logout" />
-
         </RelativeLayout>
 
 

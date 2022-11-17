@@ -1,11 +1,15 @@
 package com.gruia.courseplanet.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -25,6 +29,7 @@ public class MainPageActivity extends AppCompatActivity {
     private LoggedInViewModel viewModel;
     private TextView txtDashboard;
     private MainPageActivity fa;
+    private static final int MY_CAMERA_REQUEST_CODE = 100;
 
 
     @Override
@@ -32,38 +37,14 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main_page);
-
         fa=this;
-
-        logoutButton = (Button) findViewById(R.id.logoutButton);
         txtDashboard = (TextView) findViewById(R.id.txtDashboard);
-
         viewModel = new ViewModelProvider(this).get(LoggedInViewModel.class);
-        viewModel.getUserMutableLiveData().observe(this, new Observer<FirebaseUser>() {
-            @Override
-            public void onChanged(FirebaseUser firebaseUser) {
-                if(firebaseUser != null)
-                {
-                    txtDashboard.setText(firebaseUser.getEmail());
-                }
-            }
-        });
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.logout();
-            }
-        });
+    }
 
-        viewModel.getLoggedOutMutableLiveData().observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean loggedOut) {
-                if(loggedOut)
-                {
-                    logout();
-                }
-            }
-        });
+    @Override
+    protected void onResume() {
+        super.onResume();
 
     }
 

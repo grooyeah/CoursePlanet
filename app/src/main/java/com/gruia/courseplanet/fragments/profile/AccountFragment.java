@@ -33,9 +33,7 @@ public class AccountFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private LoggedInViewModel viewModel;
 
-    private Button editAccountButton,logoutButton;
 
     public AccountFragment() {
         // Required empty public constructor
@@ -72,30 +70,10 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        viewModel = new ViewModelProvider(this).get(LoggedInViewModel.class);
-        logoutButton =(Button) getView().findViewById(R.id.logoutButton);
-        editAccountButton =(Button) getView().findViewById(R.id.editAccountButton);
-        editAccountButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new EditAccountFragment());
-            }
-        });
 
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewModel.logout();
-            }
-        });
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_account, container, false);
     }
 
-    private void loadFragment(Fragment fragment) {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction().addToBackStack(null);
-        fragmentTransaction.replace(R.id.anatomyFrameLayout, fragment);
-        fragmentTransaction.commit();
-    }
+
 }

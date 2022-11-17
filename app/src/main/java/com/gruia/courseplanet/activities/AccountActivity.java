@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.gruia.courseplanet.R;
 import com.gruia.courseplanet.fragments.profile.AccountFragment;
 import com.gruia.courseplanet.fragments.profile.EditAccountFragment;
@@ -21,16 +22,16 @@ import com.gruia.courseplanet.viewmodel.LoggedInViewModel;
 
 public class AccountActivity extends AppCompatActivity {
 
+    private LoggedInViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_account);
-
         loadFragment(new AccountFragment());
+        viewModel = new ViewModelProvider(this).get(LoggedInViewModel.class);
     }
-
 
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getSupportFragmentManager();
@@ -42,5 +43,10 @@ public class AccountActivity extends AppCompatActivity {
     public void changeEditAccountFragment(View v)
     {
         loadFragment(new EditAccountFragment());
+    }
+
+    public void logout(View view) {
+        viewModel.logout();
+
     }
 }

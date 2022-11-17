@@ -17,4 +17,43 @@
     <string name="lungs_breathe_out">When the rib and diaphragm muscles relax, the space in the lungs decreases. This increases the air pressure to push the air out of the lungs.</string>
     <string name="lungs_fact1">Out of all organs in the human body, the lungs are the only ones that can float on water.</string>
     <string name="lungs_fact2">The longest someone has managed to hold their breath was just over 20 minutes.</string>
+
+    <!--    Stomach      -->
+    <string name="stomach_definition">The stomach is a J-shaped organ that digests food. It produces enzymes (substances that create chemical reactions) and acids (digestive juices). This mix of enzymes and digestive juices breaks down food so it can pass to your small intestine. </string>
+    <string name="stomach_definition2">Your stomach is part of the gastrointestinal (GI) tract. The GI tract is a long tube that starts at your mouth. It runs to your anus, where stool leaves your body. The GI tract is a key part of your digestive system. </string>
+    <string name="stomach_location">Your stomach sits in your upper abdomen on the left side of your body. The top of your stomach connects to a valve called the esophageal sphincter (a muscle at the end of your esophagus). The bottom of your stomach connects to your small intestine.</string>
+    <string name="stomach_how_big">The size of the stomach varies from person to person. Your stomach expands when full and deflates when empty. Because of this, your stomach size can vary depending on how recently and how much you have eaten.</string>
+    <string name="stomach_parts1">The cardia is the top part of your stomach. It contains the cardiac sphincter, which prevents food from traveling back up your esophagus.</string>
+    <string name="stomach_parts2">The fundus is a rounded section next to the cardia. It is below your diaphragm (the dome-shaped muscle that helps you breathe).</string>
+    <string name="stomach_parts3">The body (corpus) is the largest section of your stomach. In the body, your stomach contracts and begins to mix food.</string>
+    <string name="stomach_parts4">The antrum lies below the body. It holds food until your stomach is ready to send it to your small intestine.</string>
+    <string name="stomach_parts5">The pylorus is the bottom part of your stomach. It includes the pyloric sphincter. This ring of tissue controls when and how your stomach contents move to your small intestine.</string>
+
+    <!--    Cube         -->
+    <string name="cube_definition">A square is two-dimensional because it has only height and width. It turns into a 3-D cube when we give it depth. A cube is made of 6 squares, or faces. Since all squares have the same height and width, the cube mush have a depth that is the same size also.</string>
+    <string name="cube_info1">A cube is also called a hexahedron because it is a polyhedron with 6 (hexa- means 6) faces.</string>
+    <string name="cube_surface_formula">Surface Area = 6 × (Edge Length)^2</string>
+    <string name="cube_volume_formula">Volume = (Edge Length)^3</string>
+    <string name="cube_fact1">It has 12 edges.</string>
+    <string name="cube_fact2">It has 8 vertices (corner points).</string>
+    <string name="cube_fact3">Each face has 4 edges.</string>
+
+    <!--    Pyramid         -->
+    <string name="pyramid_definition">A pyramid is a three-dimensional shape. It has triangular sides that come together in a point at the top, call the "apex". A pyramid with a square base (bottom) and four sides is called a square pyramid. A pyramid with a triangular base and is called a tetrahedron. </string>
+    <string name="pyramid_surface_formula">Surface Area = [Base Area] + ½ × Perimeter × [Slant Length]</string>
+    <string name="pyramid_volume_formula">Volume = ⅓ × [Base Area] × Height</string>
+    <string name="pyramid_fact1">It has 4 faces.</string>
+    <string name="pyramid_fact2">The 3 Side Faces are triangles.</string>
+    <string name="pyramid_fact3">The base can be a triangle or a square.</string>
+
+    <!--    Sphere         -->
+    <string name="sphere_definition">A sphere is a shape in space that is like the surface of a ball. Usually, the words ball and sphere mean the same thing.</string>
+    <string name="sphere_info1">In mathematics, a sphere is the surface of a ball, which is given by all the points in three dimensional space that are located at a fixed distance from the center.</string>
+    <string name="sphere_info2">The distance from the center is called the radius of the sphere. When the sphere is filled in with all the points inside, it is called a ball. </string>
+    <string name="sphere_fact1">It is perfectly symmetrical.</string>
+    <string name="sphere_fact2">All points on the surface are the same distance "r" from the center.</string>
+    <string name="sphere_fact3">It has one surface (not a "face" as it is not flat).</string>
+
+
+
 </resources>
