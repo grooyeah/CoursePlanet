@@ -40,14 +40,16 @@ public class MainPageActivity extends AppCompatActivity {
         fa=this;
         txtDashboard = (TextView) findViewById(R.id.txtDashboard);
         viewModel = new ViewModelProvider(this).get(LoggedInViewModel.class);
+        txtDashboard.setText(viewModel.getLoggedUser().getEmail());
     }
 
     @Override
     protected void onResume() {
+        txtDashboard.setText(viewModel.getLoggedUser().getEmail());
         super.onResume();
 
-    }
 
+    }
     public void logout()
     {
         startActivity(new Intent(this,LoginActivity.class));
@@ -58,6 +60,7 @@ public class MainPageActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, CoursesActivity.class);
         startActivity(intent);
+
     }
 
     public void profilePressed(View v)

@@ -20,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginRegisterViewModel viewModel;
     private EditText emailInput,passInput;
-    private Button loginButton,registerButton;
+    private Button loginButton,goToRegisterButton;
     public Activity fa;
 
 
@@ -33,7 +33,8 @@ public class LoginActivity extends AppCompatActivity {
         emailInput =(EditText) findViewById(R.id.loginEmail);
         passInput =(EditText) findViewById(R.id.loginPassword);
         loginButton = (Button) findViewById(R.id.loginButton);
-        registerButton = (Button) findViewById(R.id.registerButton);
+        goToRegisterButton = (Button) findViewById(R.id.goToRegisterButton);
+
 
 
         fa = this;
@@ -49,18 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = emailInput.getText().toString();
-                String password = passInput.getText().toString();
 
-                if(email.length() > 0 && password.length() > 0)
-                {
-                    viewModel.register(email,password);
-                }
-            }
-        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,12 +64,24 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        goToRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchToRegister();
+            }
+        });
     }
 
     public void switchToMainPage()
     {
         startActivity(new Intent(this,MainPageActivity.class));
         fa.finish();
+    }
+
+    public void switchToRegister()
+    {
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 
 

@@ -18,6 +18,9 @@ import com.gruia.courseplanet.fragments.geometry.learn_fragments.CubeFragment;
 import com.gruia.courseplanet.fragments.geometry.learn_fragments.PyramidFragment;
 import com.gruia.courseplanet.fragments.geometry.learn_fragments.SphereFragment;
 import com.gruia.courseplanet.fragments.geometry.learn_fragments.SubLearnFragment;
+import com.gruia.courseplanet.fragments.geometry.practice_fragments.CubeQuizFragment;
+import com.gruia.courseplanet.fragments.geometry.practice_fragments.PyramidQuizFragment;
+import com.gruia.courseplanet.fragments.geometry.practice_fragments.SphereQuizFragment;
 
 public class GeometryActivity extends AppCompatActivity {
 
@@ -71,5 +74,18 @@ public class GeometryActivity extends AppCompatActivity {
 
     public void changeCubeFragment(View view) {
         loadFragment(new CubeFragment());
+    }
+
+    public void changeCubeQuiz(View view)
+    {
+        loadFragment(new CubeQuizFragment());
+    }
+    public void changePyramidQuiz(View view)
+    {
+        loadFragment(new PyramidQuizFragment());
+    }
+    public void changeSphereQuiz(View view)
+    {
+        loadFragment(new SphereQuizFragment());
     }
 }

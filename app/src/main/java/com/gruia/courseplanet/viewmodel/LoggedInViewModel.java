@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.google.firebase.auth.FirebaseUser;
 import com.gruia.courseplanet.model.Repository;
+import com.gruia.courseplanet.model.User;
 
 public class LoggedInViewModel extends AndroidViewModel {
 
@@ -35,5 +36,16 @@ public class LoggedInViewModel extends AndroidViewModel {
 
     public MutableLiveData<Boolean> getLoggedOutMutableLiveData() {
         return loggedOutMutableLiveData;
+    }
+
+    public User getLoggedUser()
+    {
+        return repository.getLoggedUser();
+    }
+
+    public boolean editAccount(User user)
+    {
+        boolean complete = repository.editAccount(user);
+        return complete;
     }
 }

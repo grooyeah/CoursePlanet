@@ -56,6 +56,9 @@
         <activity
             android:name=".activities.AnatomyARActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
