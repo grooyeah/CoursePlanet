@@ -52,67 +52,6 @@ public class AnatomyARActivity extends AppCompatActivity implements Scene.OnUpda
         }
     }
 
-    private void initSceneView() throws IOException {
-        setupSession();
-        arView.getScene().addOnUpdateListener(this);
-    }
-
-    private void setupSession() throws IOException {
-        if(session == null)
-        {
-            try {
-                session = new Session(this);
-            } catch (UnavailableDeviceNotCompatibleException | UnavailableSdkTooOldException | UnavailableArcoreNotInstalledException | UnavailableApkTooOldException e) {
-                e.printStackTrace();
-            }
-            shouldConfigureSession = true;
-        }
-
-        if(shouldConfigureSession)
-        {
-            configSession();
-            shouldConfigureSession = false;
-            arView.setSession(session);
-        }
-
-        try {
-            session.resume();
-            arView.resume();
-        } catch (Exception e) {
-            e.printStackTrace();
-            session = null;
-            return;
-        }
-    }
-
-    private void configSession() throws IOException {
-        Config config = new Config(session);
-        if(!buildDatabase(config))
-        {
-            Toast.makeText(this,"Error database",Toast.LENGTH_SHORT).show();
-        }
-        config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
-        session.configure(config);
-    }
-
-    private boolean buildDatabase(Config config) throws IOException {
-        AugmentedImageDatabase augmentedImageDatabase;
-        Bitmap bitmap = loadImage();
-        if(bitmap == null)
-        {
-            return false;
-        }
-        augmentedImageDatabase = new AugmentedImageDatabase(session);
-        augmentedImageDatabase.addImage("cube",bitmap);
-        config.setAugmentedImageDatabase(augmentedImageDatabase);
-        return true;
-    }
-
-    private Bitmap loadImage() throws IOException {
-        InputStream is = getAssets().open("cube_qr.png");
-        return BitmapFactory.decodeStream(is);
-    }
-
     @Override
     public void onUpdate(FrameTime frameTime) {
         Frame frame = arView.getArFrame();
@@ -167,5 +106,64 @@ public class AnatomyARActivity extends AppCompatActivity implements Scene.OnUpda
             arView.pause();
             session.pause();
         }
+    }
+
+    //AR setup and configuration
+
+    private void initSceneView() throws IOException {
+        setupSession();
+        arView.getScene().addOnUpdateListener(this);
+    }
+    private void setupSession() throws IOException {
+        if(session == null)
+        {
+            try {
+                session = new Session(this);
+            } catch (UnavailableDeviceNotCompatibleException | UnavailableSdkTooOldException | UnavailableArcoreNotInstalledException | UnavailableApkTooOldException e) {
+                e.printStackTrace();
+            }
+            shouldConfigureSession = true;
+        }
+
+        if(shouldConfigureSession)
+        {
+            configSession();
+            shouldConfigureSession = false;
+            arView.setSession(session);
+        }
+
+        try {
+            session.resume();
+            arView.resume();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session = null;
+            return;
+        }
+    }
+    private void configSession() throws IOException {
+        Config config = new Config(session);
+        if(!buildDatabase(config))
+        {
+            Toast.makeText(this,"Error database",Toast.LENGTH_SHORT).show();
+        }
+        config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
+        session.configure(config);
+    }
+    private boolean buildDatabase(Config config) throws IOException {
+        AugmentedImageDatabase augmentedImageDatabase;
+        Bitmap bitmap = loadImage();
+        if(bitmap == null)
+        {
+            return false;
+        }
+        augmentedImageDatabase = new AugmentedImageDatabase(session);
+        augmentedImageDatabase.addImage("cube",bitmap);
+        config.setAugmentedImageDatabase(augmentedImageDatabase);
+        return true;
+    }
+    private Bitmap loadImage() throws IOException {
+        InputStream is = getAssets().open("cube_qr.png");
+        return BitmapFactory.decodeStream(is);
     }
 }

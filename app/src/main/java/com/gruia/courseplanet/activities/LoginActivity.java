@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton,goToRegisterButton;
     public Activity fa;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,12 +72,13 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void switchToMainPage()
-    {
+
+    //Switching views
+
+    public void switchToMainPage() {
         startActivity(new Intent(this,MainPageActivity.class));
         fa.finish();
     }
-
     public void switchToRegister()
     {
         startActivity(new Intent(this, RegisterActivity.class));

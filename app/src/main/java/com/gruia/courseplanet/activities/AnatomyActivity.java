@@ -43,6 +43,9 @@ import com.gruia.courseplanet.fragments.anatomy.learn_fragments.HeartFragment;
 import com.gruia.courseplanet.fragments.anatomy.learn_fragments.LungsFragment;
 import com.gruia.courseplanet.fragments.anatomy.learn_fragments.StomachFragment;
 import com.gruia.courseplanet.fragments.anatomy.learn_fragments.SubLearnFragment;
+import com.gruia.courseplanet.fragments.anatomy.practice_fragments.HeartQuizFragment;
+import com.gruia.courseplanet.fragments.anatomy.practice_fragments.LungsQuizFragment;
+import com.gruia.courseplanet.fragments.anatomy.practice_fragments.StomachQuizFragment;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -60,7 +63,6 @@ public class AnatomyActivity extends AppCompatActivity implements Scene.OnUpdate
     private Session session;
     private boolean shouldConfigureSession = false;
     private Context arContext;
-
     private AnatomyARFragment anatomyARFragment;
 
     @Override
@@ -72,138 +74,6 @@ public class AnatomyActivity extends AppCompatActivity implements Scene.OnUpdate
         anatomyARFragment = new AnatomyARFragment();
 
 
-    }
-
-    private void initSceneView() throws IOException {
-        setupSession();
-        arView.getScene().addOnUpdateListener(this);
-    }
-
-    private void setupSession() throws IOException {
-        if(session == null)
-        {
-            try {
-                session = new Session(this);
-            } catch (UnavailableDeviceNotCompatibleException | UnavailableSdkTooOldException | UnavailableArcoreNotInstalledException | UnavailableApkTooOldException e) {
-                e.printStackTrace();
-            }
-            shouldConfigureSession = true;
-        }
-        if(anatomyARFragment == null)
-        {
-            System.out.println("FRAGMENT NULL FRAGMENT NULL");
-            System.out.println("FRAGMENT NULL FRAGMENT NULL");
-            System.out.println("FRAGMENT NULL FRAGMENT NULL");
-        }else
-        {
-            System.out.println(" FRAGMENT CONTEXT");
-            System.out.println(" FRAGMENT CONTEXT");
-            System.out.println(" FRAGMENT CONTEXT");
-            System.out.println(" FRAGMENT CONTEXT");
-            System.out.println(" FRAGMENT CONTEXT");
-        }
-        arView = new ArSceneView(arContext);
-        if(shouldConfigureSession)
-        {
-            configSession();
-            shouldConfigureSession = false;
-            arView.setSession(session);
-        }
-
-        try {
-            session.resume();
-            arView.resume();
-        } catch (Exception e) {
-            e.printStackTrace();
-            session = null;
-            return;
-        }
-    }
-
-    private void configSession() throws IOException {
-        Config config = new Config(session);
-        if(!buildDatabase(config))
-        {
-            Toast.makeText(this,"Error database",Toast.LENGTH_SHORT).show();
-        }
-        config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
-        session.configure(config);
-    }
-
-    private boolean buildDatabase(Config config) throws IOException {
-        AugmentedImageDatabase augmentedImageDatabase;
-        Bitmap bitmap = loadImage();
-        if(bitmap == null)
-        {
-            return false;
-        }
-        augmentedImageDatabase = new AugmentedImageDatabase(session);
-        augmentedImageDatabase.addImage("cube",bitmap);
-        config.setAugmentedImageDatabase(augmentedImageDatabase);
-        return true;
-    }
-
-    private Bitmap loadImage() throws IOException {
-        InputStream is = getAssets().open("cube_qr.png");
-        return BitmapFactory.decodeStream(is);
-    }
-
-    public void changeLearnFragment(View view) {
-        loadFragment(new SubLearnFragment());
-    }
-
-    public void changePracticeFragment(View view) {
-        loadFragment(new AnatomyPracticeFragment());
-    }
-
-    public void changeARFragment(View view) throws IOException {
-        Intent intent = new Intent(this, AnatomyARActivity.class);
-        startActivity(intent);
-
-
-//        Dexter.withActivity(this)
-//                .withPermission(Manifest.permission.CAMERA)
-//                .withListener(new PermissionListener() {
-//                    @Override
-//                    public void onPermissionGranted(PermissionGrantedResponse response) {
-//                        try {
-//                            setupSession();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onPermissionDenied(PermissionDeniedResponse response) {
-//                        Toast.makeText(AnatomyActivity.this, "Permission needed to display camera.", Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-//
-//                    }
-//                }).check();
-
-
-    }
-
-    private void loadFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction().addToBackStack(null);
-        fragmentTransaction.replace(R.id.anatomyFrameLayout, fragment);
-        fragmentTransaction.commit();
-    }
-
-    public void changeStomachFragment(View view) {
-        loadFragment(new StomachFragment());
-    }
-
-    public void changeLungsFragment(View view) {
-        loadFragment(new LungsFragment());
-    }
-
-    public void changeHeartFragment(View view) {
-        loadFragment(new HeartFragment());
     }
 
     @Override
@@ -261,4 +131,142 @@ public class AnatomyActivity extends AppCompatActivity implements Scene.OnUpdate
             session.pause();
         }
     }
+
+    //Switching fragments
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction().addToBackStack(null);
+        fragmentTransaction.replace(R.id.anatomyFrameLayout, fragment);
+        fragmentTransaction.commit();
+    }
+
+    public void changeLearnFragment(View view) {
+        loadFragment(new SubLearnFragment());
+    }
+    public void changePracticeFragment(View view) {
+        loadFragment(new AnatomyPracticeFragment());
+    }
+    public void changeARFragment(View view) throws IOException {
+        Intent intent = new Intent(this, AnatomyARActivity.class);
+        startActivity(intent);
+
+
+//        Dexter.withActivity(this)
+//                .withPermission(Manifest.permission.CAMERA)
+//                .withListener(new PermissionListener() {
+//                    @Override
+//                    public void onPermissionGranted(PermissionGrantedResponse response) {
+//                        try {
+//                            setupSession();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onPermissionDenied(PermissionDeniedResponse response) {
+//                        Toast.makeText(AnatomyActivity.this, "Permission needed to display camera.", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+//
+//                    }
+//                }).check();
+
+
+    }
+
+    public void changeStomachFragment(View view) {
+        loadFragment(new StomachFragment());
+    }
+    public void changeLungsFragment(View view) {
+        loadFragment(new LungsFragment());
+    }
+    public void changeHeartFragment(View view) {
+        loadFragment(new HeartFragment());
+    }
+
+    public void changeHeartQuiz(View view) {
+        loadFragment(new HeartQuizFragment());
+    }
+    public void changeLungsQuiz(View view) {
+        loadFragment(new LungsQuizFragment());
+    }
+    public void changeStomachQuiz(View view) {
+        loadFragment(new StomachQuizFragment());
+    }
+
+    //AR Configurations
+
+    private void initSceneView() throws IOException {
+        setupSession();
+        arView.getScene().addOnUpdateListener(this);
+    }
+    private void setupSession() throws IOException {
+        if(session == null)
+        {
+            try {
+                session = new Session(this);
+            } catch (UnavailableDeviceNotCompatibleException | UnavailableSdkTooOldException | UnavailableArcoreNotInstalledException | UnavailableApkTooOldException e) {
+                e.printStackTrace();
+            }
+            shouldConfigureSession = true;
+        }
+        if(anatomyARFragment == null)
+        {
+            System.out.println("FRAGMENT NULL FRAGMENT NULL");
+            System.out.println("FRAGMENT NULL FRAGMENT NULL");
+            System.out.println("FRAGMENT NULL FRAGMENT NULL");
+        }else
+        {
+            System.out.println(" FRAGMENT CONTEXT");
+            System.out.println(" FRAGMENT CONTEXT");
+            System.out.println(" FRAGMENT CONTEXT");
+            System.out.println(" FRAGMENT CONTEXT");
+            System.out.println(" FRAGMENT CONTEXT");
+        }
+        arView = new ArSceneView(arContext);
+        if(shouldConfigureSession)
+        {
+            configSession();
+            shouldConfigureSession = false;
+            arView.setSession(session);
+        }
+
+        try {
+            session.resume();
+            arView.resume();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session = null;
+            return;
+        }
+    }
+    private void configSession() throws IOException {
+        Config config = new Config(session);
+        if(!buildDatabase(config))
+        {
+            Toast.makeText(this,"Error database",Toast.LENGTH_SHORT).show();
+        }
+        config.setUpdateMode(Config.UpdateMode.LATEST_CAMERA_IMAGE);
+        session.configure(config);
+    }
+    private boolean buildDatabase(Config config) throws IOException {
+        AugmentedImageDatabase augmentedImageDatabase;
+        Bitmap bitmap = loadImage();
+        if(bitmap == null)
+        {
+            return false;
+        }
+        augmentedImageDatabase = new AugmentedImageDatabase(session);
+        augmentedImageDatabase.addImage("cube",bitmap);
+        config.setAugmentedImageDatabase(augmentedImageDatabase);
+        return true;
+    }
+    private Bitmap loadImage() throws IOException {
+        InputStream is = getAssets().open("cube_qr.png");
+        return BitmapFactory.decodeStream(is);
+    }
+
 }

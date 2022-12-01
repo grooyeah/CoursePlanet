@@ -50,8 +50,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    public void toLogin()
-    {
+    //Switching back to login
+
+    public void toLogin() {
         startActivity(new Intent(this,LoginActivity.class));
         fa.finish();
     }

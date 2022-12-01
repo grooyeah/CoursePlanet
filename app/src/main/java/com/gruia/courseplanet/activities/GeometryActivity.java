@@ -31,26 +31,6 @@ public class GeometryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_geometry);
         loadFragment(new GeometryFragment());
     }
-
-    public void changeLearnFragment(View view) {
-        loadFragment(new SubLearnFragment());
-    }
-
-    public void changePracticeFragment(View view) {
-        loadFragment(new GeometryPracticeFragment());
-    }
-
-    public void changeARFragment(View view) {
-        loadFragment(new GeometryARFragment());
-    }
-
-    private void loadFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction().addToBackStack(null);
-        fragmentTransaction.replace(R.id.geometryFrameLayout, fragment);
-        fragmentTransaction.commit();
-    }
-
     @Override
     public void onBackPressed(){
         android.app.FragmentManager fm = getFragmentManager();
@@ -64,14 +44,31 @@ public class GeometryActivity extends AppCompatActivity {
     }
 
 
+    //Switching fragments
+
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction().addToBackStack(null);
+        fragmentTransaction.replace(R.id.geometryFrameLayout, fragment);
+        fragmentTransaction.commit();
+    }
+
+    public void changeLearnFragment(View view) {
+        loadFragment(new SubLearnFragment());
+    }
+    public void changePracticeFragment(View view) {
+        loadFragment(new GeometryPracticeFragment());
+    }
+    public void changeARFragment(View view) {
+        loadFragment(new GeometryARFragment());
+    }
+
     public void changeSphereFragment(View view) {
         loadFragment(new SphereFragment());
     }
-
     public void changePyramidFragment(View view) {
         loadFragment(new PyramidFragment());
     }
-
     public void changeCubeFragment(View view) {
         loadFragment(new CubeFragment());
     }

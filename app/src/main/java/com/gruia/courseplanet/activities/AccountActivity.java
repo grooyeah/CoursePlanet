@@ -39,24 +39,29 @@ public class AccountActivity extends AppCompatActivity {
         fa = this;
     }
 
+    //Switching fragments & views
+
     private void loadFragment(Fragment fragment) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction().addToBackStack(null);
         fragmentTransaction.replace(R.id.accountFrameLayout, fragment);
         fragmentTransaction.commit();
     }
-
     public void changeEditAccountFragment(View v)
     {
         loadFragment(new EditAccountFragment());
     }
+    public void changeMainPage() {
+        startActivity(new Intent(this,MainPageActivity.class));
+        fa.finish();
+    }
+
+    //Edit and logout functions
 
     public void logout(View view) {
         viewModel.logout();
     }
-
-    public void editAccount(View view)
-    {
+    public void editAccount(View view) {
         emailText = (EditText) findViewById(R.id.editTextEmailAddress);
         passwordText = (EditText) findViewById(R.id.editTextPassword);
         String email = emailText.getText().toString();
@@ -64,9 +69,7 @@ public class AccountActivity extends AppCompatActivity {
         confirmEditAccount(email,password);
 
     }
-
-    public void confirmEditAccount(String email, String password)
-    {
+    public void confirmEditAccount(String email, String password) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle("Confirm Edit");
@@ -92,11 +95,5 @@ public class AccountActivity extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
-    }
-
-    public void changeMainPage()
-    {
-        startActivity(new Intent(this,MainPageActivity.class));
-        fa.finish();
     }
 }

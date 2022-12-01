@@ -162,8 +162,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="What is the volume of a cube knowing that an edge is 4 cm long." />s
-
+                android:text="What is the volume of a cube knowing that an edge is 4 cm long." />
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
@@ -189,6 +188,18 @@
                     android:textSize="15sp"
                     />
             </RadioGroup>
+
+            <Button
+                android:id="@+id/cubeQuizButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Finish"
+                >
+
+            </Button>
+
+
 
         </LinearLayout>
     </ScrollView>

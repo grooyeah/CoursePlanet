@@ -5,10 +5,161 @@
     android:layout_height="match_parent"
     tools:context=".fragments.geometry.practice_fragments.SphereQuizFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="How is the center of the sphere called?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Radius"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Middle"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Point 0"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Which of these is true?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="A sphere is built of multiple faces."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="A sphere is perfectly symmetrical."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All points on the surface have different distances from the center."
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="What is the surface area of a sphere with a radius of 6 cm?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="452"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="360"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="180"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="How is the volume of a sphere with a radius of 3 cm?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="116"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="121"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="113"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/sphereQuizButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Finish"
+            >
+
+        </Button>
+    </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

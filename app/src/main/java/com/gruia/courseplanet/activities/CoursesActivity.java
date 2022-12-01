@@ -18,13 +18,13 @@ public class CoursesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_courses);
     }
 
-    public void geometryClicked(View v)
-    {
+    //Switching views
+
+    public void geometryClicked(View v) {
         Intent intent = new Intent(this, GeometryActivity.class);
         startActivity(intent);
     }
-    public void anatomyClicked(View v)
-    {
+    public void anatomyClicked(View v) {
         Intent intent = new Intent(this, AnatomyActivity.class);
         startActivity(intent);
     }

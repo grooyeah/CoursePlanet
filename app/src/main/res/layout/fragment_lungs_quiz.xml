@@ -5,10 +5,152 @@
     android:layout_height="match_parent"
     tools:context=".fragments.anatomy.practice_fragments.LungsQuizFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="What is the lungs task?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Take oxygen from the air and remove carbon dioxide from the body"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Fill our body with air so we can float on water"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter smoke from cars on streets"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Whic of the following is not part of the lungs?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Atrium"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Bronchi"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trachea"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Which cells are responsible to carry the oxygen and carbon dioxide around the body?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="White blood cells"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Red blood cells"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Your body couldn’t breathe without this system. Which one is it?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Respiratory system"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Photosynthesis"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perspiration system"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+        <Button
+            android:id="@+id/lungsQuizButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Finish"
+            >
+
+        </Button>
+
+    </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

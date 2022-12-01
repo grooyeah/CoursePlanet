@@ -5,10 +5,151 @@
     android:layout_height="match_parent"
     tools:context=".fragments.anatomy.practice_fragments.HeartQuizFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="How are the four areas of the heart called?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Rooms"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Chambers"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bags"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Which of the following is NOT part of the heart?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Atriums"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ventricles"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trachea"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Can the heart keep beating outside the body, if supplied of oxygen?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Yes"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Where is the heart located?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Top-left of the body"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Under the stomach"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Over the lungs"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/heartQuizButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Finish"
+            >
+
+        </Button>
+    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

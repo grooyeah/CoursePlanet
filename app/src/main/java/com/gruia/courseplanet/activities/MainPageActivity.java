@@ -50,33 +50,28 @@ public class MainPageActivity extends AppCompatActivity {
 
 
     }
-    public void logout()
-    {
+
+    public void logout() {
         startActivity(new Intent(this,LoginActivity.class));
         fa.finish();
     }
 
-    public void coursesPressed(View v)
-    {
+    //Switching views
+
+    public void coursesPressed(View v) {
         Intent intent = new Intent(this, CoursesActivity.class);
         startActivity(intent);
 
     }
-
-    public void profilePressed(View v)
-    {
+    public void profilePressed(View v) {
         Intent intent = new Intent(this, AccountActivity.class);
         startActivity(intent);
     }
-
-    public void progressPressed(View v)
-    {
+    public void progressPressed(View v) {
         Intent intent = new Intent(this, ProgressActivity.class);
         startActivity(intent);
     }
-
-    public void settingsPressed(View v)
-    {
+    public void settingsPressed(View v) {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }

@@ -5,10 +5,156 @@
     android:layout_height="match_parent"
     tools:context=".fragments.anatomy.practice_fragments.StomachQuizFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Which of the following is not produced by the stomach?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Enzymes"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Acids"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red blood cells"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Where is the stomach located?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Lower abdomen on the right side of the body"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Upper abdomen on the left side of the body"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Behind the lungs under the heart"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="What is the main function of the stomach?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Store food for later"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Remind us when we are hungry"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Digests food"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="What is the role of the cardia?" />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Prevents food from traveling back up your esophagus"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Tells your body if you like the food or not"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Makes sure the food is digestible by the stomach"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+        </RadioGroup>
+        <Button
+            android:id="@+id/stomachQuizButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Finish"
+            >
+
+        </Button>
+    </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

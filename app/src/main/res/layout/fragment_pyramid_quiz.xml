@@ -5,10 +5,132 @@
     android:layout_height="match_parent"
     tools:context=".fragments.geometry.practice_fragments.PyramidQuizFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textView"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How many faces does a pyramid have?" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="4 faces"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="6 faces"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8 faces"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="How is the point on top of the pyramid called?" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Apex"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Point"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peak"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+            </RadioGroup>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="What is the volume of a pyramid knowing that the height is 4 cm and the base is a square with the edge measuring 4 cm." />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="21 cm"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="32 cm"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="17 cm"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/pyramidQuizButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Finish"
+                >
+
+            </Button>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
