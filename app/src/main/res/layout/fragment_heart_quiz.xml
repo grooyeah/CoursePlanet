@@ -32,6 +32,7 @@
                 android:textSize="15sp"
                 />
             <RadioButton
+                android:id="@+id/heartQuizAnswer1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Chambers"
@@ -72,6 +73,7 @@
                 android:textSize="15sp"
                 />
             <RadioButton
+                android:id="@+id/heartQuizAnswer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Trachea"
@@ -92,6 +94,7 @@
             android:layout_height="match_parent" >
 
             <RadioButton
+                android:id="@+id/heartQuizAnswer3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Yes"
@@ -118,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
             <RadioButton
+                android:id="@+id/heartQuizAnswer4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Top-left of the body"

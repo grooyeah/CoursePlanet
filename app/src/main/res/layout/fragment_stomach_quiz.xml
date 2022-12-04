@@ -39,6 +39,7 @@
                 android:textSize="15sp"
                 />
             <RadioButton
+                android:id="@+id/stomachQuizAnswer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Red blood cells"
@@ -64,6 +65,7 @@
                 android:textSize="15sp"
                 />
             <RadioButton
+                android:id="@+id/stomachQuizAnswer2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Upper abdomen on the left side of the body"
@@ -104,6 +106,7 @@
                 android:textSize="15sp"
                 />
             <RadioButton
+                android:id="@+id/stomachQuizAnswer3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Digests food"
@@ -123,6 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
             <RadioButton
+                android:id="@+id/stomachQuizAnswer4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Prevents food from traveling back up your esophagus"

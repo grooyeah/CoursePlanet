@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.gruia.courseplanet.R;
 import com.gruia.courseplanet.fragments.geometry.GeometryARFragment;
@@ -76,6 +79,7 @@ public class GeometryActivity extends AppCompatActivity {
     public void changeCubeQuiz(View view)
     {
         loadFragment(new CubeQuizFragment());
+
     }
     public void changePyramidQuiz(View view)
     {

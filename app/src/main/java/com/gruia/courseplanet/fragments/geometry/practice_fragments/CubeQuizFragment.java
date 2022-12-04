@@ -7,8 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.gruia.courseplanet.R;
+import com.gruia.courseplanet.activities.GeometryActivity;
+import com.gruia.courseplanet.database.ProgressDAO;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +26,7 @@ public class CubeQuizFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private ProgressDAO progressDAO = ProgressDAO.getInstance();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,12 +61,51 @@ public class CubeQuizFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootview = inflater.inflate(R.layout.fragment_cube_quiz, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cube_quiz, container, false);
+        RadioButton answer1 = (RadioButton) rootview.findViewById(R.id.cubeQuizAnswer1);
+        RadioButton answer2 = (RadioButton) rootview.findViewById(R.id.cubeQuizAnswer2);
+        RadioButton answer3 = (RadioButton) rootview.findViewById(R.id.cubeQuizAnswer3);
+        RadioButton answer4 = (RadioButton) rootview.findViewById(R.id.cubeQuizAnswer4);
+        RadioButton answer5 = (RadioButton) rootview.findViewById(R.id.cubeQuizAnswer5);
+
+        Button cubeFinishButton = (Button) rootview.findViewById(R.id.cubeQuizButton);
+
+        cubeFinishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(answer1.isChecked() && answer2.isChecked() && answer3.isChecked()
+                        && answer4.isChecked() && answer5.isChecked())
+                {
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    progressDAO.progress();
+                    Toast.makeText(rootview.getContext(),"ALL ANSWERS CORRECT",Toast.LENGTH_SHORT);
+                }
+                else
+                {
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    Toast.makeText(rootview.getContext(),"SOMETHING WAS NOT CORRECT",Toast.LENGTH_SHORT);
+                }
+            }
+        });
+        return rootview;
     }
 }

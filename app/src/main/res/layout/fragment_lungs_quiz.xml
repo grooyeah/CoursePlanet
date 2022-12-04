@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
             <RadioButton
+                android:id="@+id/lungsQuizAnswer1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Take oxygen from the air and remove carbon dioxide from the body"
@@ -54,11 +55,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Whic of the following is not part of the lungs?" />
+            android:text="Which of the following is not part of the lungs?" />
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
             <RadioButton
+                android:id="@+id/lungsQuizAnswer2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Atrium"
@@ -99,6 +101,7 @@
                 android:textSize="15sp"
                 />
             <RadioButton
+                android:id="@+id/lungsQuizAnswer3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Red blood cells"
@@ -118,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
             <RadioButton
+                android:id="@+id/lungsQuizAnswer4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Respiratory system"

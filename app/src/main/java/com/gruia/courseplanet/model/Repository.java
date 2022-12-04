@@ -13,6 +13,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.gruia.courseplanet.database.UserDAO;
 
 public class Repository {
 
@@ -20,6 +21,7 @@ public class Repository {
     private FirebaseAuth firebaseAuth;
     private MutableLiveData<FirebaseUser> userMutableLiveData;
     private MutableLiveData<Boolean> loggedOutMutableLiveData;
+    private UserDAO userDAO = UserDAO.getInstance();
 
     public Repository(Application application)
     {
@@ -43,6 +45,8 @@ public class Repository {
                 if(task.isSuccessful())
                 {
                     userMutableLiveData.postValue(firebaseAuth.getCurrentUser());
+                    userDAO.addUser(firebaseAuth.getCurrentUser().getUid(),new User(email,password));
+
                 }else{
                     Toast.makeText(application,"Registration failed: " + task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
                 }

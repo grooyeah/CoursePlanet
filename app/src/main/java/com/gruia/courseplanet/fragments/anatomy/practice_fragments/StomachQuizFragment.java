@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RadioButton;
 
 import com.gruia.courseplanet.R;
 
@@ -60,7 +62,40 @@ public class StomachQuizFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootview = inflater.inflate(R.layout.fragment_stomach_quiz, container, false);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stomach_quiz, container, false);
+        RadioButton answer1 = (RadioButton) rootview.findViewById(R.id.stomachQuizAnswer1);
+        RadioButton answer2 = (RadioButton) rootview.findViewById(R.id.stomachQuizAnswer2);
+        RadioButton answer3 = (RadioButton) rootview.findViewById(R.id.stomachQuizAnswer3);
+        RadioButton answer4 = (RadioButton) rootview.findViewById(R.id.stomachQuizAnswer4);
+
+        Button stomachFinishButton = (Button) rootview.findViewById(R.id.stomachQuizButton);
+
+        stomachFinishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(answer1.isChecked() && answer2.isChecked() && answer3.isChecked()
+                        && answer4.isChecked())
+                {
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                }
+                else
+                {
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                }
+            }
+        });
+        return rootview;
     }
 }
