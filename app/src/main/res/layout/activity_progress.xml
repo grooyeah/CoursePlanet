@@ -55,7 +55,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Geometry" />
+                android:text="Courses" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -63,26 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:indeterminate="true"/>
+                android:indeterminate="false"/>
 
-            <TextView
-                android:layout_marginTop="40dp"
-
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textColor="@color/white"
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Anatomy" />
-
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:indeterminate="true"/>
         </LinearLayout>
 
     </LinearLayout>

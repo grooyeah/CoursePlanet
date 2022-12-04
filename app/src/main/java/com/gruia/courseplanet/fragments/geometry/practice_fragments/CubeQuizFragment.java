@@ -84,25 +84,14 @@ public class CubeQuizFragment extends Fragment {
                 if(answer1.isChecked() && answer2.isChecked() && answer3.isChecked()
                         && answer4.isChecked() && answer5.isChecked())
                 {
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+
                     progressDAO.progress();
-                    Toast.makeText(rootview.getContext(),"ALL ANSWERS CORRECT",Toast.LENGTH_SHORT);
+                    Toast.makeText(rootview.getContext(),"ALL ANSWERS CORRECT",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    Toast.makeText(rootview.getContext(),"SOMETHING WAS NOT CORRECT",Toast.LENGTH_SHORT);
+
+                    Toast.makeText(rootview.getContext(),"SOMETHING WAS NOT CORRECT",Toast.LENGTH_SHORT).show();
                 }
             }
         });

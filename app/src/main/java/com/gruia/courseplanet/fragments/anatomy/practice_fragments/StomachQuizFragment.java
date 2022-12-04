@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.gruia.courseplanet.R;
+import com.gruia.courseplanet.database.ProgressDAO;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +25,7 @@ public class StomachQuizFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private ProgressDAO progressDAO = ProgressDAO.getInstance();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -77,22 +80,12 @@ public class StomachQuizFragment extends Fragment {
                 if(answer1.isChecked() && answer2.isChecked() && answer3.isChecked()
                         && answer4.isChecked())
                 {
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
-                    System.out.println("MERGE TOATE BUNE E BINE TE PUP");
+                    progressDAO.progress();
+                    Toast.makeText(rootview.getContext(),"ALL ANSWERS CORRECT",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
-                    System.out.println("UN RASPUNS N-A FOST BUN SA MORA MASA");
+                    Toast.makeText(rootview.getContext(),"SOMETHING WAS NOT CORRECT",Toast.LENGTH_SHORT).show();
                 }
             }
         });

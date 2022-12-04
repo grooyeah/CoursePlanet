@@ -15,10 +15,12 @@ public class ProgressDAO {
     private static ProgressDAO instance;
     private final FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference ref;
+    private int userProgress;
 
     private ProgressDAO()
     {
         ref = database.getReference("progress");
+        userProgress = 0;
     }
 
     public static synchronized ProgressDAO getInstance()
@@ -32,50 +34,10 @@ public class ProgressDAO {
 
     public void addProgress(int progress)
     {
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
-        System.out.println("PROGRESSS INAINTE DE INCREMENTARE " + progress);
+
         if(progress <= 6)
         {
             progress+=1;
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
-            System.out.println("PROGRESSS DUPA DE INCREMENTARE " + progress);
         }
         ref.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("user_progress").setValue(progress);
     }
@@ -90,35 +52,9 @@ public class ProgressDAO {
 
                 for (DataSnapshot dateSnapshot: dataSnapshot.getChildren()) {
                     int progress  = dateSnapshot.child("user_progress").getValue(Integer.class);
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
-                    System.out.println(progress + "PROGRESS FOUND");
+                    userProgress = progress;
                     addProgress(progress);
                 }
-
-
-
-
             }
 
             @Override
@@ -132,5 +68,10 @@ public class ProgressDAO {
     public void progress()
     {
         getProgress();
+    }
+
+    public int getCurrentProgress()
+    {
+        return userProgress;
     }
 }
