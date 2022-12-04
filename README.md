@@ -9,12 +9,13 @@ by the user. Settings are also included for additional customization to match th
 
 Requirements:
 
-1. Users will be able to enroll into courses inside the 'Courses' tab.
-2. Users will be able to track their progress for each individual course.
-3. Users will be able to use AR technology for additional features.
-4. Users will be able to configure their profile to their preferance.
-5. Users will be able to configure the settings of the app.
-6. Users will be able to retake courses if desired.
+1. Users will be able to go into courses inside the 'Courses' tab. - delivered
+2. Users will be able to take quizzes inside the 'Practice' part of the courses. - delivered
+3. Users will be able to track their progress for each individual course. - partly delivered
+4. Users will be able to use AR technology for additional features. - implemented but not working 
+5. Users will be able to edit their account to their preferance. - delivered
+6. Users will be able to configure the settings of the app. - not delivered
+7. Users will be able to retake courses if desired. - not delivered
 
 Youtube link to the presentation video:
 
